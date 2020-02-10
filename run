@@ -1,0 +1,4 @@
+#!/bin/bash 
+
+# This command runs the container with MPI library
+docker run --rm -it -v $(pwd):/project nlknguyen/alpine-mpich
