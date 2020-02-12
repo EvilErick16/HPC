@@ -1,6 +1,5 @@
 #include <stdio.h> 
 #include <mpi.h> 
-#define NPROCS 8
 
 int main(int argc, char *argv[]){
 
