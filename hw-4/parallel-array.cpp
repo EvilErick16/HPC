@@ -2,7 +2,7 @@
 Erick Juarez
 CPSC 479 Sec 1
 HOMEWORK 4 - 3/4/20
-developed and tested using g++ version 5.3.0 (compiled wiht mpic++ to use MPI library)
+developed and tested using g++ version 5.3.0
 */
 #include<omp.h>
 #include<stdio.h>
@@ -30,10 +30,10 @@ int main(){
     #pragma omp parallel shared(array) private(tid)
     {
         tid = omp_get_thread_num();
-        // Add 2 * i to array[i] for i = 0 to i = 63
+        // Add 3 * i to array[i] for i = 0 to i = 63
         #pragma omp for schedule(static, 1)
         for (int i = 0; i < SIZE; i++){
-            array[i] += 2 * i;
+            array[i] += 3 * i;
             printf("Thread: %d Array Index: %d Value: %d\n", tid, i, array[i]);
         }
     }
