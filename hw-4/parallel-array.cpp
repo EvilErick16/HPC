@@ -13,7 +13,8 @@ int main(){
     // Initialize 
     const int SIZE = 64;
     int array[SIZE];
-    int tid, private_sum, odd_count;
+    int tid, private_sum;
+    int odd_count = 0;
     omp_set_num_threads(THREADS);
 
     // Parallel region for Problem 1 
@@ -34,7 +35,7 @@ int main(){
         #pragma omp for schedule(static, 1)
         for (int i = 0; i < SIZE; i++){
             array[i] += 3 * i;
-            printf("Thread: %d Array Index: %d Value: %d\n", tid, i, array[i]);
+            printf("tid: %d array[%d] = %d\n", tid, i, array[i]);
         }
     }
 
@@ -47,7 +48,7 @@ int main(){
         #pragma omp for schedule(static, 1)
         for (int i = 0; i < SIZE; i++){
             if(array[i] % 2 != 0) { 
-                private_sum+= 1; 
+                private_sum++;
                 }
         }
         // Collect all private counts
@@ -56,6 +57,7 @@ int main(){
             odd_count+= private_sum;
         }
         // Master thread prints result
+        #pragma omp barrier
         if(tid == 0){
             printf("=========================\nOdd numbers in array[]: %d\n", odd_count);
         }
