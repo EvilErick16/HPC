@@ -95,7 +95,7 @@ Given a destributed system with N processes, communication in a ring is achieved
 ## Screenshots 
 
 ### Full screen 
-![alt text](https://github.com/EvilErick16/HPC/blob/master/leader-election/Full_Screen_SC.jpg)
+![alt text](https://github.com/EvilErick16/HPC/blob/master/leader-election/F_Screen_SC.jpg)
 
 ### 10 Processors 
 ![alt text](https://github.com/EvilErick16/HPC/blob/master/leader-election/n10_sc.jpg)
