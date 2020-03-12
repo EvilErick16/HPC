@@ -24,17 +24,17 @@ Given a destributed system with N processes, communication in a ring is achieved
 ## Concurrent two leader electoin algorithm
 
 1. Process 0 generates a random value `V0`:
-   - if `V0` is even, Process 0 sends `V0` *and* 9999 to process 1
-   - if `V0` is odd, Process 0 sends `V0` *and* 9990 to process 1 
+   - if `V0` is even, Process 0 sends `V0` *and* `9999` to process 1
+   - if `V0` is odd, Process 0 sends `V0` *and* `9990` to process 1 
  
-2. Process 1 receives `V0` and (9999 or 9990) from Process 0 and generates a random value `V1`: 
+2. Process 1 receives `V0` and (`9999` or `9990`) from Process 0 and generates a random value `V1`: 
     - if `V1` is odd, it compares it with the odd value received from Process 0\*   
     - if `V1` is even, it compares it with the even value received from Process 0
      
      
        \**`V1` will be compared to `V0` if they are both odd or both even.*
-      *`V1` will be compared to 9990 if `V1` is even and `V0` is odd.*
-      *`V1` will be compared to 9999 if `V1` is odd and `V0` is even.*
+      *`V1` will be compared to `9990` if `V1` is even and `V0` is odd.*
+      *`V1` will be compared to `9999` if `V1` is odd and `V0` is even.*
     - The smallest value from the comparason and the other unchanged value will be sent to Process 2
   3. Process 2 and all the following processes will do the same check  
   
@@ -48,8 +48,8 @@ Given a destributed system with N processes, communication in a ring is achieved
 
  1. Initialize Communicator environment and variables
 
-   - `int even` , `int even_rank`    
-   - `int odd` , int `odd_rank` 
+   - int `even` , int `even_rank`    
+   - int `odd` , int `odd_rank` 
 
 
 2. If Rank is 0 
@@ -90,3 +90,13 @@ Given a destributed system with N processes, communication in a ring is achieved
 
 4. Finalize Communication 
  
+## Screenshots 
+
+### Full screen 
+![alt text](https://github.com/EvilErick16/HPC/blob/master/leader-election/Full_Screen_SC.jpg)
+
+### 10 Processors 
+![alt text](https://github.com/EvilErick16/HPC/blob/master/leader-election/n10_sc.jpg)
+
+### 50 Processors 
+![alt text](https://github.com/EvilErick16/HPC/blob/master/leader-election/n50_sc.jpg)
