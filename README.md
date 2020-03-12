@@ -1,6 +1,7 @@
 # About 
 
-This repository contains C++ snippets that use Message Passing Interface (MPI) libraries to implement parallel programs.
+This repository contains C++ snippets that use Message Passing Interface (MPI) libraries and OpenMP to implement parallel programs.
+
 Developed for CPSC 479 - High Performance Computing 
 
 # Requirements 
