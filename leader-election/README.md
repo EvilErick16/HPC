@@ -12,7 +12,7 @@ Run executable file with 20 Processors with the following command:
 
 ``` mpirun -n 20 ./select-leader```
 
-Replace 20 with the number of processors to run teh program; tested up to 80 processors
+Replace 20 with the number of processors you wish to use; tested up to 80 processors
 
 note that you need to run the program with at least 2 processors
 
