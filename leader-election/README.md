@@ -3,16 +3,18 @@ Erick Juarez juarez.erick16@csu.fullerton.edu
 
 # Running the program 
 ## Compile
-compile source code and make an executable called *select-leader* with the following command:
+compile source code to make an executable called *select-leader* with the following command:
 
 ``` mpic++ leader-election.cpp -o select-leader```
 
 ## Execute 
-Run the executable file with 20 Processors with the following command: 
+Run executable file with 20 Processors with the following command: 
 
 ``` mpirun -n 20 ./select-leader```
 
-Replace 20 with any number you wish to use for the number of processors to run the prgram; tested up to 80 processors 
+Replace 20 with the number of processors to run teh program; tested up to 80 processors
+
+note that you need to run the program with at least 2 processors
 
 # Problem Descripion  
 ## Ring topology 
@@ -60,7 +62,7 @@ Given a destributed system with N processes, communication in a ring is achieved
       - `odd` = 9999, `odd_rank` = 0 
 
    - Else if random number is odd 
-      - `even = 9990, `even_rank` = 0
+      - `even` = 9990, `even_rank` = 0
       - `odd` = random number, `odd_rank` = 0 
 
    - Use blocking communication to send `even`, `even_rank`, `odd`, `odd_rank` to Rank 1 
