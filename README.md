@@ -12,6 +12,8 @@ Developed for CPSC 479 - High Performance Computing
 [Alpine-MPICH](https://hub.docker.com/r/nlknguyen/alpine-mpich/) is the custom Docker image of Alpine Linux
 that contains a portable implementation of MPI standard.
 
+[MPICH](https://www.mpich.org/documentation/guides/) also works if you have a Linux machine.  
+
 # Running the Docker Image  
 
 1. Clone this repository 
